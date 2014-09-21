@@ -1,10 +1,11 @@
 stats_py_vm
 ===========
 
-* Source code - [Github][1]
-* Author - Gavin Noronha - <gavinln@hotmail.com>
+* VM for statistical genetics with iPython, R and CL tools
+* Forked from https://github.com/gavinln/stats_py_vm
 
-[1]: https://github.com/gavinln/stats_py_vm.git
+
+
 
 About
 -----
@@ -86,5 +87,4 @@ Credits
 
 Thanks to (in no particular order):
 
-* Glen Noronha
-
+* Gavin Noronha - gavinln@hotmail.com
