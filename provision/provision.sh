@@ -13,5 +13,5 @@ sudo apt-get -y install screen
 curl -o ~/.screenrc https://gist.githubusercontent.com/cfljam/610e9fe0a8ca23e80199/raw
 
 ### install R base and R2Py
-# sudo apt-get -y install r-base-dev
-# sudo pip install rpy2
+sudo apt-get -y install r-base-dev
+sudo pip install rpy2
