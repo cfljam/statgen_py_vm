@@ -22,7 +22,7 @@ class python {
                 provider => pip,
                 require => Package['python-pip']
             }
-            package { ["python-matplotlib"]:
+            package { ["matplotlib"]:
                 ensure => installed,
                 provider => apt,
                 require => Package['numpy', 'pyparsing', 'libfreetype6-dev']
@@ -69,7 +69,7 @@ class python {
             }
             package { 'scikit-learn':
                 provider => pip,
-                require => Package['python-matplotlib']
+                require => Package['matplotlib']
             }
             package { 'pandas':
                 ensure => installed,
@@ -79,7 +79,7 @@ class python {
             package { 'seaborn':
                 ensure => installed,
                 provider => pip,
-                require => Package['python-matplotlib']
+                require => Package['matplotlib']
             }
             package { 'patsy':
                 ensure => installed,
