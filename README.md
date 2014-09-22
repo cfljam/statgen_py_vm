@@ -48,6 +48,10 @@ Running
     vagrant up
     ```
 
+    If you are behind a firewall see https://gist.github.com/cfljam/298d5a91abbd9f9c971f
+
+
+
 2. Connect to the VM
 
     ```
