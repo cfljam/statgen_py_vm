@@ -42,29 +42,16 @@ There are [Puppet][13] scripts that automatically install the software when the 
 Running
 -------
 
-1. To start the virtual machine(VM) type
+- To start the virtual machine(VM) type
 
     ```
     vagrant up
     ```
 
-    If you are behind a firewall see https://gist.github.com/cfljam/298d5a91abbd9f9c971f
+-  If you are behind a firewall see https://gist.github.com/cfljam/298d5a91abbd9f9c971f
 
 
-
-2. Connect to the VM
-
-    ```
-    vagrant ssh
-    ```
-
-3. Start the notebook
-
-    ```bash
-    /vagrant/vm/ipython_notebook.sh
-    ```
-
-4. Open the notebook in the browser at the URL.
+-connect from your host machine
 
     ```
     http://localhost:8888/
