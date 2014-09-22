@@ -1,4 +1,5 @@
 #!/bin/sh
+##Provisioning Vagrant Ubuntu VM for Variant Analysis and Primer Design
 
 ## Primer design pre-requisites
 sudo easy_install Biopython bcbio-gff
