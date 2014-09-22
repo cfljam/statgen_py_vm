@@ -87,6 +87,16 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     #puppet.options = "--verbose --debug"
   end
 
+  ## Shell Provisioning of BioPython etc
+  ## See https://gist.github.com/atenni/5604615
+  ##regarding permalink to raw file
+
+  config.vm.provision "shell",
+    #path: "https://gist.githubusercontent.com/cfljam/1f4a8cfcb522eab3433d/raw"
+    path:"./provision/provision.sh"
+end
+
+
   # Enable provisioning with chef solo, specifying a cookbooks path, roles
   # path, and data_bags path (all relative to this Vagrantfile), and adding
   # some recipes and/or roles.
@@ -124,4 +134,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # chef-validator, unless you changed the configuration.
   #
   #   chef.validation_client_name = "ORGNAME-validator"
+
+
+### Start ipython server
+
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+  config.vm.provision "shell",
+  inline: "ipython notebook --ip=0.0.0.0 &",
+  run: "always"
+
 end
