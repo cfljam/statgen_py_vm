@@ -18,3 +18,6 @@ class dev {
 }
 
 include dev
+if $virtual == "virtualbox" and $kernel == 'Darwin' {
+  $fqdn = 'localhost'
+}
