@@ -24,7 +24,7 @@ class python {
             }
             package { ["matplotlib"]:
                 ensure => installed,
-                provider => apt,
+                provider => pip,
                 require => Package['numpy', 'pyparsing', 'libfreetype6-dev']
             }
             package { 'virtualenv':
