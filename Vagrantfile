@@ -86,12 +86,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provision "puppet" do |puppet|
     puppet.manifest_file  = "vagrant.pp"
     puppet.manifests_path = "puppet/manifests"
-    #puppet.options = "--verbose --debug"
-  end
-  ### Puppet Modules for R et al
-  
-  config.vm.provision "puppet" do |puppet|
-     puppet.module_path = "puppet/modules"
+    puppet.options = "--verbose --debug"
+    puppet.module_path = "puppet/modules"
    end
 
   ## Shell Provisioning of BioPython etc
