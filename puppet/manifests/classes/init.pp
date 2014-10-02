@@ -22,7 +22,7 @@ class init {
                     Exec['update_apt'],
                 ];
             }
-            $misc_packages = ["make", "curl", "git-core"]
+            $misc_packages = ["make", "curl", "git-core","autoconf","ruby"]
             package { $misc_packages:
                 ensure => present,
                 require => [
