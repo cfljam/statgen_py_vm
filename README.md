@@ -3,6 +3,8 @@ stats_py_vm
 
 * VM for statistical genetics with iPython, R and CL tools
 * Forked from https://github.com/gavinln/stats_py_vm
+* Puppet Module for R from https://github.com/forward3d/puppet-r
+
 
 
 
@@ -10,8 +12,10 @@ stats_py_vm
 About
 -----
 
-This project provides a [Ubuntu (12.0)][2] [Vagrant][3] Virtual Machine (VM) with numerical and
-scientific libraries for Python. It includes the following libraries.
+This project provides a [Ubuntu (14.04 )][2] [Vagrant][3] Virtual Machine (VM) with numerical and
+scientific libraries for Python and R.
+
+It includes the following Python libraries.
 
 * [Numpy][4]
 * [Scipy][5]
@@ -23,10 +27,17 @@ scientific libraries for Python. It includes the following libraries.
 * [Statsmodels][11]
 * [Scikit learn][12]
 
+It will also include libraries and core programs for manipulation of genomic and genetics data
+
+- vcftools
+- vcflib
+- PyVCF
+- BedTools and PyBedtools
+
 
 There are [Puppet][13] scripts that automatically install the software when the VM is started.
 
-[2]: http://releases.ubuntu.com/precise/
+[2]: http://releases.ubuntu.com/trusty/
 [3]: http://www.vagrantup.com/
 [4]: http://www.numpy.org/
 [5]: http://www.scipy.org/
@@ -51,10 +62,11 @@ Running
 -  If you are behind a firewall see https://gist.github.com/cfljam/298d5a91abbd9f9c971f
 
 
--connect from your host machine
+- connect from your host machine ( user and password are  **vagrant**)
 
     ```
     http://localhost:8888/
+
     ```
 
 Requirements

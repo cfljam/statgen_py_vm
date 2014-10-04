@@ -3,6 +3,12 @@
 #
 import "classes/*.pp"
 
+## Workaround for OSX
+if $virtual == "virtualbox" and $kernel == 'Darwin' {
+  $fqdn = 'localhost'
+  notice("Kernel is ${kernel}")
+}
+
 $PROJ_DIR = "/vagrant"
 $HOME_DIR = "/home/vagrant"
 
@@ -17,7 +23,11 @@ class dev {
     }
 }
 
+$R_packages = ['ggplot2','reshape2', 'plyr']
+
+class { 'r': }
+r::package { $R_packages :
+  dependencies => true}
+
 include dev
-if $virtual == "virtualbox" and $kernel == 'Darwin' {
-  $fqdn = 'localhost'
-}
+include r

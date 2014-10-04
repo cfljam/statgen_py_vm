@@ -1,7 +1,7 @@
 #!/bin/sh
 ##Provisioning Vagrant Ubuntu VM for Variant Analysis and Primer Design
 
-## Primer design pre-requisites
+## Primer design pre-requisites. - should go to puppet
 sudo easy_install Biopython bcbio-gff
 sudo apt-get -y install primer3
 
@@ -9,12 +9,9 @@ sudo apt-get -y install primer3
 sudo gem install gist
 
 ###Screen config
-sudo apt-get -y install screen
-curl -o ~/.screenrc https://gist.githubusercontent.com/cfljam/610e9fe0a8ca23e80199/raw
+# sudo apt-get -y install screen
+# curl -o ~/.screenrc https://gist.githubusercontent.com/cfljam/610e9fe0a8ca23e80199/raw
 
-### install R base and R2Py
-#sudo apt-get -y install r-base-dev r-base-dev
-#sudo pip install rpy2
+### install  R2Py - should go to puppet
 
-## install automake
-#sudo apt-get -y install autoconf
+sudo pip install rpy2
