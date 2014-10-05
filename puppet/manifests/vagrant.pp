@@ -23,6 +23,7 @@ class dev {
     }
 }
 
+## Install R plus selected packages
 $R_packages = ['ggplot2','reshape2', 'plyr']
 
 class { 'r': }
