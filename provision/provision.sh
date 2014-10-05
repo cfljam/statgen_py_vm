@@ -5,6 +5,7 @@
 sudo easy_install Biopython bcbio-gff
 sudo apt-get -y install primer3
 
+
 ## set up for Gisting
 sudo gem install gist
 
@@ -14,7 +15,9 @@ sudo gem install gist
 
 
 ##install bedtools
-#sudo apt-get -y install bedtools
+sudo apt-get -y install bedtools
+sudo pip install -U cython
+#sudo pip install pybedtools
 git clone https://github.com/daler/pybedtools.git
 cd pybedtools
 git pull
@@ -34,4 +37,4 @@ if ! type "vcftools" 2> /dev/null; then
 fi
 
 ### install  R2Py,PyBedtools and PyVCF - should go to puppet
-sudo pip install rpy2 pyvcf pybedtools
+sudo pip install rpy2 pyvcf 
