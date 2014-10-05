@@ -47,7 +47,15 @@ Running
     ```
     vagrant up
     ```
+- If you have any timeout errors you may need to re-run provisioning to complete installation
+```
+vagrant provision
+```
+- and it may be advisable to 
 
+```
+vagrant reload
+```
 -  If you are behind a firewall see https://gist.github.com/cfljam/298d5a91abbd9f9c971f
 
 
