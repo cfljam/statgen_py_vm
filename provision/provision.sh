@@ -12,6 +12,19 @@ sudo gem install gist
 # sudo apt-get -y install screen
 # curl -o ~/.screenrc https://gist.githubusercontent.com/cfljam/610e9fe0a8ca23e80199/raw
 
-### install  R2Py - should go to puppet
 
-sudo pip install rpy2
+##install bedtools
+sudi apt-get -y install bedtools
+
+## install vcftools
+echo "Installing vcftools"
+wget http://downloads.sourceforge.net/project/vcftools/vcftools_0.1.12b.tar.gz
+tar xzf vcftools_0.1.12b.tar.gz
+cd vcftools_0.1.12b/
+make
+sudo cp ./bin/* /usr/local/bin
+cd ..
+rm -rf vcftools_0.1.12b
+
+### install  R2Py,PyBedtools and PyVCF - should go to puppet
+sudo pip install rpy2 pyvcf pybedtools 
