@@ -14,17 +14,19 @@ sudo gem install gist
 
 
 ##install bedtools
-sudi apt-get -y install bedtools
+sudo apt-get -y install bedtools
 
 ## install vcftools
-echo "Installing vcftools"
-wget http://downloads.sourceforge.net/project/vcftools/vcftools_0.1.12b.tar.gz
-tar xzf vcftools_0.1.12b.tar.gz
-cd vcftools_0.1.12b/
-make
-sudo cp ./bin/* /usr/local/bin
-cd ..
-rm -rf vcftools_0.1.12b
+if ! type "vcftools" 2> /dev/null; then
+    echo "Installing vcftools"
+    wget http://downloads.sourceforge.net/project/vcftools/vcftools_0.1.12b.tar.gz
+    tar xzf vcftools_0.1.12b.tar.gz
+    cd vcftools_0.1.12b/
+    make
+    sudo cp ./bin/* /usr/local/bin
+    cd ..
+    rm -rf vcftools_0.1.12b
+fi
 
 ### install  R2Py,PyBedtools and PyVCF - should go to puppet
-sudo pip install rpy2 pyvcf pybedtools 
+sudo pip install rpy2 pyvcf pybedtools
