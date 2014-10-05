@@ -106,6 +106,11 @@ class python {
                 provider => pip,
                 require => Package['ipython']
             }
+            package { 'cython':
+                ensure => installed,
+                provider => pip,
+                require => Package['cython']
+            }
         }
     }
 }

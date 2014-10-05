@@ -24,7 +24,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine. In the example below,
   # accessing "localhost:8080" will access port 80 on the guest machine.
-  
+
   ### Port for Ipython Notebook
   config.vm.network "forwarded_port", guest: 8888, host: 8888
 
@@ -94,10 +94,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   ## See https://gist.github.com/atenni/5604615
   ##regarding permalink to raw file
 
-  config.vm.provision "shell",
-    #path: "https://gist.githubusercontent.com/cfljam/1f4a8cfcb522eab3433d/raw"
-    path:"./provision/provision.sh"
-end
+  config.vm.provision :shell, :path => "./provision/provision.sh"
+  config.vm.provision :shell, :inline =>  "ipython notebook --ip=0.0.0.0 &", :run => "always"
+
 
 
   # Enable provisioning with chef solo, specifying a cookbooks path, roles
@@ -139,11 +138,7 @@ end
   #   chef.validation_client_name = "ORGNAME-validator"
 
 
-### Start ipython server
 
-Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-  config.vm.provision "shell",
-  inline: "ipython notebook --ip=0.0.0.0 &",
-  run: "always"
+
 
 end

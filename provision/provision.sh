@@ -14,7 +14,12 @@ sudo gem install gist
 
 
 ##install bedtools
-sudo apt-get -y install bedtools
+#sudo apt-get -y install bedtools
+git clone https://github.com/daler/pybedtools.git
+cd pybedtools
+git pull
+sudo python setup.py develop
+cd
 
 ## install vcftools
 if ! type "vcftools" 2> /dev/null; then
