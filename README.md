@@ -53,6 +53,11 @@ There are [Puppet][13] scripts that automatically install the software when the 
 Running
 -------
 
+- clone this repository and enter it
+```
+git clone --recursive  https://github.com/cfljam/statgen_py_vm.git
+cd statgen_py_vm
+```
 - To start the virtual machine(VM) type
 
     ```
