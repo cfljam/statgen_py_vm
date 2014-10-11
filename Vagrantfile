@@ -45,7 +45,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # the path on the host to the actual folder. The second argument is
   # the path on the guest to mount the folder. And the optional third
   # argument is a set of non-required options.
-  # config.vm.synced_folder "../data", "/vagrant_data"
+  config.vm.synced_folder "../data", "/vagrant_data"
 
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
@@ -93,9 +93,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   ## Shell Provisioning of BioPython etc
   ## See https://gist.github.com/atenni/5604615
   ##regarding permalink to raw file
+  ## NOTE use of privilege setting so iPython notebooks run as default user
 
   config.vm.provision :shell, :path => "./provision/provision.sh"
-  config.vm.provision :shell, :inline =>  "ipython notebook --ip=0.0.0.0 &", :run => "always"
+  config.vm.provision :shell, :inline =>  "ipython notebook --ip=0.0.0.0 &", :run => "always",privileged: false
 
 
 
