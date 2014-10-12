@@ -53,11 +53,20 @@ There are [Puppet][13] scripts that automatically install the software when the 
 Running
 -------
 
-- clone this repository and enter it
+- clone this repository 
 ```
 git clone --recursive  https://github.com/cfljam/statgen_py_vm.git
 cd statgen_py_vm
 ```
+
+- ensure the parent directory contains a shared data directory **data**
+```
+	mkdir data
+```
+- change into the repo directory
+```
+	cd statgen_py_vm
+ ```
 - To start the virtual machine(VM) type
 
     ```
@@ -75,12 +84,16 @@ vagrant reload
 -  If you are behind a firewall see https://gist.github.com/cfljam/298d5a91abbd9f9c971f
 
 
-- connect from your host machine ( user and password are  **vagrant**)
+- connect to the ipython notbook server from your host machine 
 
     ```
     http://localhost:8888/
 
     ```
+ - access the VM by SSH
+ ```
+ 	vagrant ssh
+ ```
 
 Requirements
 ------------
