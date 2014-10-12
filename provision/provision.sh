@@ -3,7 +3,14 @@
 
 ## Primer design pre-requisites. - should go to puppet
 sudo easy_install Biopython bcbio-gff
-sudo apt-get -y install primer3
+
+if ! type "primer3" 2> /dev/null; then
+  sudo apt-get -y install primer3
+fi
+
+if ! type "tabix" 2> /dev/null; then
+  sudo apt-get -y install tabix
+fi
 
 
 ## set up for Gisting
@@ -15,7 +22,10 @@ sudo gem install gist
 
 
 ##install bedtools
-sudo apt-get -y install bedtools
+if ! type "bedtools" 2> /dev/null; then
+  sudo apt-get -y install bedtools
+fi
+
 sudo pip install -U cython
 #sudo pip install pybedtools
 git clone https://github.com/daler/pybedtools.git
@@ -32,9 +42,11 @@ if ! type "vcftools" 2> /dev/null; then
     cd vcftools_0.1.12b/
     make
     sudo cp ./bin/* /usr/local/bin
+    sudo cp ./perl/* /usr/local/bin
+    export PERL5LIB=/usr/local/bin  
     cd ..
     rm -rf vcftools_0.1.12b
 fi
 
 ### install  R2Py,PyBedtools and PyVCF - should go to puppet
-sudo pip install rpy2 pyvcf 
+sudo pip install rpy2 pyvcf
