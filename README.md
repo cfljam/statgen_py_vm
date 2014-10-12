@@ -32,7 +32,8 @@ It will also include libraries and core programs for manipulation of genomic and
 - vcftools
 - vcflib
 - PyVCF
-- BedTools and PyBedtools
+- BedTools
+- PyBedtools
 
 
 There are [Puppet][13] scripts that automatically install the software when the VM is started.
@@ -63,6 +64,8 @@ cd statgen_py_vm
 ```
 	mkdir data
 ```
+-  If you are behind a firewall you need to set system proxy and use the vagrant proxyconf plugin. See https://gist.github.com/cfljam/298d5a91abbd9f9c971f 
+
 - change into the repo directory
 ```
 	cd statgen_py_vm
@@ -81,7 +84,6 @@ vagrant provision
 ```
 vagrant reload
 ```
--  If you are behind a firewall see https://gist.github.com/cfljam/298d5a91abbd9f9c971f
 
 
 - connect to the ipython notbook server from your host machine 
