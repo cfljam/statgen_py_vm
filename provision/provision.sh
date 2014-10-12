@@ -43,7 +43,7 @@ if ! type "vcftools" 2> /dev/null; then
     make
     sudo cp ./bin/* /usr/local/bin
     sudo cp ./perl/* /usr/local/bin
-    export PERL5LIB=/usr/local/bin  
+    echo "export PERL5LIB=$PERL5LIB:/usr/local/bin" >> ~/.bashrc  
     cd ..
     rm -rf vcftools_0.1.12b
 fi
