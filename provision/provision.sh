@@ -58,22 +58,17 @@ if ! type "vcfcheck" 2> /dev/null; then
 fi
 
 ### Install BCFTools
-if ! type "bcftools" 2> /dev/null; then
+if ! type "samtools" 2> /dev/null; then
     git clone  https://github.com/samtools/htslib.git htslib
     git clone https://github.com/samtools/bcftools.git bcftools
+    git clone https://github.com/samtools/samtools
     cd htslib; git pull; cd ..
     cd bcftools; git pull; cd ..
-    cd bcftools; make; make test; sudo make install
+    cd samtools; git pull; cd ..
+    cd htslib; make; make test; sudo make install; cd ..
+    cd samtools; make HTSDIR=../htslib; make test; sudo make install; cd ..
+    cd bcftools; make; make test; sudo make install; cd ..
+    rm -r bcftools samtools htslib
     cd
     rm -rf bcftools
-fi
-
-### Install samtools
-if ! type "samtools" 2> /dev/null; then
-    git clone  https://github.com/samtools/samtools
-    cd samtools
-    make  HTSDIR=../htslib
-    make test; sudo make install
-    cd
-    rm -rf htslib samtools
 fi
