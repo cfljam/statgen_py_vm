@@ -49,7 +49,7 @@ fi
 
 ### Install vcflib
 if ! type "vcfcheck" 2> /dev/null; then
-  git clone --recursive git://github.com/ekg/vcflib.git
+  git clone --recursive https://github.com/ekg/vcflib.git
   cd vcflib
   make
   sudo cp bin/* /usr/local/bin
@@ -59,8 +59,8 @@ fi
 
 ### Install BCFTools
 if ! type "bcftools" 2> /dev/null; then
-    git clone  git://github.com/samtools/htslib.git htslib
-    git clone git://github.com/samtools/bcftools.git bcftools
+    git clone  https://github.com/samtools/htslib.git htslib
+    git clone https://github.com/samtools/bcftools.git bcftools
     cd htslib; git pull; cd ..
     cd bcftools; git pull; cd ..
     cd bcftools; make; make test; sudo make install
