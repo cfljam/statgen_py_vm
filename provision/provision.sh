@@ -65,4 +65,15 @@ if ! type "bcftools" 2> /dev/null; then
     cd bcftools; git pull; cd ..
     cd bcftools; make; make test; sudo make install
     cd
+    rm -rf bcftools
+fi
+
+### Install samtools
+if ! type "samtools" 2> /dev/null; then
+    git clone  https://github.com/samtools/samtools
+    cd samtools
+    make  HTSDIR=../htslib
+    make test; sudo make install
+    cd
+    rm -rf htslib samtools
 fi
