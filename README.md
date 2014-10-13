@@ -64,7 +64,14 @@ cd statgen_py_vm
 ```
 	mkdir data
 ```
--  If you are behind a firewall you need to set system proxy and use the vagrant proxyconf plugin. See https://gist.github.com/cfljam/298d5a91abbd9f9c971f 
+-  If you are behind a firewall you may need to 
+		1. set system proxy 
+		2. install [vagrant proxy conf](https://github.com/tmatilai/vagrant-proxyconf) 
+		3. set Vagrant proxy variables
+        4. create or edit your default vagrant settings in $HOME/.vagrant.d/Vagrantfile
+ 
+ See https://gist.github.com/cfljam/298d5a91abbd9f9c971f 
+
 
 - change into the repo directory
 ```
