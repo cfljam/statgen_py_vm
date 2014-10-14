@@ -79,6 +79,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # end
 
   ## set defaults for pip
+  ## Not working
+  ### See http://stackoverflow.com/questions/18411795/set-environment-variables-with-puppet
   config.vm.provision :shell, :inline => 'echo "export PIP_DEFAULT_TIMEOUT=600" >> ~/.profile'
 
   # Enable provisioning with Puppet stand alone.  Puppet manifests

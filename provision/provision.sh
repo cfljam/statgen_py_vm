@@ -18,7 +18,7 @@ sudo gem install gist
 ### install  R2Py,PyBedtools and PyVCF - should go to puppet
 sudo pip install rpy2 pyvcf
 
-##install bedtools
+##install bedtools,cython and pybedtools
 if ! type "bedtools" 2> /dev/null; then
   sudo apt-get -y install bedtools
 fi
@@ -30,6 +30,7 @@ cd pybedtools
 git pull
 sudo python setup.py develop
 cd
+sudo rm -r pybedtools
 
 
 
@@ -58,17 +59,13 @@ if ! type "vcfcheck" 2> /dev/null; then
 fi
 
 ### Install BCFTools
-if ! type "samtools" 2> /dev/null; then
-    git clone  https://github.com/samtools/htslib.git htslib
-    git clone https://github.com/samtools/bcftools.git bcftools
-    git clone https://github.com/samtools/samtools
-    cd htslib; git pull; cd ..
-    cd bcftools; git pull; cd ..
-    cd samtools; git pull; cd ..
+if ! type "bcftools" 2> /dev/null; then
+    git clone --branch=develop git://github.com/samtools/htslib.git
+    git clone --branch=develop git://github.com/samtools/bcftools.git
+    git clone --branch=develop git://github.com/samtools/samtools.git
     cd htslib; make; make test; sudo make install; cd ..
     cd samtools; make HTSDIR=../htslib; make test; sudo make install; cd ..
-    cd bcftools; make; make test; sudo make install; cd ..
+    cd bcftools; make HTSDIR=../htslib; make test; sudo make install; cd ..
     rm -r bcftools samtools htslib
-    cd
-    rm -rf bcftools
+
 fi
