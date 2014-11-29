@@ -22,19 +22,16 @@ class init {
                     Exec['update_apt'],
                 ];
             }
-            $misc_packages = ["make", "curl", "git-core","autoconf","ruby","libxml2-dev", "libcurl4-openssl-dev"]
+
+            $misc_packages = ["make", "curl", "pandoc","git-core","autoconf","ruby","libxml2-dev", "libcurl4-openssl-dev"]
+
             package { $misc_packages:
                 ensure => present,
                 require => [
                     Exec['update_apt'],
                 ];
             }
-            package { "pandoc":
-                ensure => present,
-                require => [
-                    Exec['update_apt'],
-                ];
-            }
+            
         }
     }
 }

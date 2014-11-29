@@ -30,7 +30,7 @@ cd pybedtools
 git pull
 sudo python setup.py develop
 cd
-sudo rm -r pybedtools
+sudo rm -rf pybedtools
 
 
 
@@ -69,3 +69,7 @@ if ! type "bcftools" 2> /dev/null; then
     rm -r bcftools samtools htslib
 
 fi
+
+### Install Beagle 4
+wget http://faculty.washington.edu/browning/beagle/beagle.r1398.jar
+sudo mv beagle.r1398.jar /usr/local/bin
