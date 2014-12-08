@@ -7,9 +7,9 @@ ENV DEBIAN_FRONTEND noninteractive
 
 ################## BEGIN INSTALLATION ######################
 
-#RUN echo "deb http://archive.ubuntu.com/ubuntu precise main universe" > /etc/apt/sources.list
-#RUN apt-get update
-#RUN apt-get upgrade -y
+RUN echo "deb http://archive.ubuntu.com/ubuntu precise main universe" > /etc/apt/sources.list
+RUN apt-get update
+RUN apt-get upgrade -y
 
 ##Note tweak to set Python 2.7 default
 RUN apt-get install python-biopython -y; sed -i 's/python3/python2/' /usr/local/bin/ipython; pip install terminado bcbio-gff
@@ -18,6 +18,7 @@ RUN apt-get install python-biopython -y; sed -i 's/python3/python2/' /usr/local/
 RUN sudo apt-get  install primer3 -y
 
 ##Install vcf utils
+## NB should probably be broken up into more layers..
 ADD install_vcf_tools.sh /tmp/install_vcf_tools.sh
 RUN  bash /tmp/install_vcf_tools.sh
 
