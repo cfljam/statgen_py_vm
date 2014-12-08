@@ -1,6 +1,11 @@
-!#/bin/sh
+#!/bin/sh
 
 ### Install various vcf tools for primer design
+
+if ! type "wget" 2> /dev/null; then
+  echo "Installing wget"
+  sudo apt-get install wget
+fi
 
 ## install vcftools
 if ! type "vcftools" 2> /dev/null; then
