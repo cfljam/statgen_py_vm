@@ -84,7 +84,7 @@ RUN set -xe ;\
 
 ##################### INSTALLATION END #####################
 
-## Extremely basic test of Python install
+## TEST 
 ADD test-suite.sh /tmp/test-suite.sh
 RUN ./test-suite.sh
 
