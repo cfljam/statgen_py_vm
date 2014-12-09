@@ -18,7 +18,7 @@ RUN set -xe ;\
   apt-get install -y \
     asciidoc \
     libncurses5-dev \
-    wget 
+    wget
 
 ## Note tweak to set Python 2.7 default
 RUN set -xe ;\
@@ -28,7 +28,7 @@ RUN set -xe ;\
   pip install terminado bcbio-gff
 
 ## Install Primer3
-RUN apt-get install -y primer3 
+RUN apt-get install -y primer3
 ## Install vcf utils
 
 WORKDIR /tmp
@@ -73,6 +73,11 @@ RUN set -xe ;\
   make test ;\
   make install
 
+## Install bedtools plus Python interface
+RUN set -xe ;\
+   apt-get -y install bedtools
+   pip install pybedtools
+
 ## Install Beagle 4
 ADD http://faculty.washington.edu/browning/beagle/beagle.r1398.jar /usr/local/bin/beagle.jar
 
@@ -82,9 +87,13 @@ RUN set -xe ;\
   apt-get install -y ruby-full; \
   gem install gist
 
+### Launch ipynb as default
+
+CMD ipython notebook --ip=0.0.0.0 --port=8888 --no-browser
+
 ##################### INSTALLATION END #####################
 
-## TEST 
+## TEST
 ADD test-suite.sh /tmp/test-suite.sh
 RUN ./test-suite.sh
 
