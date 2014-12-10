@@ -75,7 +75,7 @@ RUN set -xe ;\
 
 ## Install bedtools plus Python interface
 RUN set -xe ;\
-   apt-get -y install bedtools
+   apt-get -y install bedtools;\
    pip install pybedtools
 
 ## Install Beagle 4
@@ -84,7 +84,7 @@ ADD http://faculty.washington.edu/browning/beagle/beagle.r1398.jar /usr/local/bi
 
 ## set up for Gisting Notebooks
 RUN set -xe ;\
-  apt-get install -y ruby-full; \
+  apt-get  install -y  ruby; \
   gem install gist
 
 ### Launch ipynb as default
