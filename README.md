@@ -4,7 +4,7 @@ stats_py_vm
 * VM for statistical genetics with iPython, R and CL tools
 * Forked from https://github.com/gavinln/stats_py_vm
 * Puppet Module for R from https://github.com/forward3d/puppet-r
-* also Dockerised version in progress in subdirectory **socker**
+* also Dockerised version in progress in subdirectory **socker** on dev branch
 
 
 
